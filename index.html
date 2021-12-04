@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Código para encode da página, faz não criar caracteres estranhos no html-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dbastos.dev Engenheiro e Desenvolvedor Web 👨🏾‍💻</title>
+    <!-- SEO meta tag description-->
+    <meta name="description" content="Engenheiro &Desenvolvedor Web.">
+    <!-- Arquivo de link com o css do site-->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!--
+        O site segue uma estrutura linear de cima para baixo. Logo, olhando como diversas caixas, podemos estruturar a aplicação de cima para baixo. Usando tags semânticas. 
+    -->
+    <!--
+        Primeira seção Logo e links internos da página
+    -->
+    <header class="header">
+        <!-- Logo-->
+        <!--<img src="./img/marca.svg" alt="Lobo"> -->
+        <h1> dbastos.dev </h1>
+        <!--Links do menu-->
+        <nav>
+            <ul class="header-menu">
+                <!-- links internos da página-->
+                <!-- Os links utilizam o id para identificar as seções internas do site-->
+                <li><a href="#experiencia">Experiência</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#contato">Contato</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <!--
+        Segunda seção Introdução do site
+    -->
+
+    <main class="introducao">
+        <img src="./img/perfil.svg" alt="Lobo cinza">
+        <div>
+            <!-- Uso do BR para quebrar o texto -->
+            <h1>Engenheiro & <br> Desenvolvedor Web</h1>
+            <p>Localizado no Rio de Janeiro 🏖️ </p>
+        </div>
+    </main>
+
+     <!--
+        Terceira seção Experiência 
+    -->
+    <!-- aria-label é para definir uma seção de conteúdo-->
+    <section class="experiencia" id="experiencia" aria-label="Experiência">
+        <h2 class="subtitulo">Experiência</h2>
+        <div>
+            <p class="experiencia-texto">Atualmente desenvolvo pequenas aplicações utilizando apenas <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong> no <strong>Front End</strong> e com <strong>Node.Js</strong> e <strong>PHP</strong> no <strong>Back End</strong>. Abaixo relaciono a lista dos meus cinco mais importantes projetos até o momento.</p>
+
+            <div class="empresa">
+                <span class="empresa-ano">Dez-2021</span>
+                <h3 class="empresa-titulo">App Landing page</h3>
+                <span class="empresa-titulo"><a href="https://github.com/dbastosdev/lista-contatos-nodejs">github</a></span>
+                <p class="empresa-texto">Sistema web de Landing page, com área administrativa protegida por seções com login e senha, para captura, segmentação e envio de e-mails feito com Node.js no padrão MVC</p>
+                <ul class="empresa-habilidades">
+                    <li>Node.Js</li>
+                    <li>Express</li>
+                    <li>Express-session</li>
+                    <li>Nodemailer</li>
+                    <li>Bootstrap</li>
+                    <li>MySQL</li>
+                </ul>
+            </div>
+
+            <div class="empresa">
+                <span class="empresa-ano">Nov-2021</span>
+                <h3 class="empresa-titulo">Sinapi Bot</h3>
+                <span class="empresa-titulo"><a href="https://github.com/dbastosdev/sinapi-bot-nodejs">github</a></span>
+                <p class="empresa-texto">Sistema web scrapper em linha de comando que busca e envia as últimas atualizações do banco de dados de preço do governo SINAPI e os envia por e-mail.</p>
+                <ul class="empresa-habilidades">
+                    <li>Node.Js</li>
+                    <li>Puppeteer</li>
+                    <li>Nodemailer</li>
+                </ul>
+            </div>
+
+            <div class="empresa">
+                <span class="empresa-ano">Nov-2021</span>
+                <h3 class="empresa-titulo">Lista de contatos</h3>
+                <span class="empresa-titulo"><a href="https://github.com/dbastosdev/lista-contatos-nodejs">github</a></span>
+                <p class="empresa-texto">Sistema de lista de contatos com funcionalidades CRUD e persistência de dados em arquivos JSON.</p>
+                <ul class="empresa-habilidades">
+                    <li>Node.Js</li>
+                    <li>Express</li>
+                    <li>Bootstrap</li>
+                    <li>ejs</li>
+                    <li>fs</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--
+       Quarta seção Formação
+    -->
+    <section class="formacao" id="formacao">
+        <!-- No layout, essa área é toda preta. Com isso, o container de 1200px deve ficar em uma div dentro da section, sendo a section responsável por colorir o fundo.-->
+        <div class="formacao-container">
+            <!-- A partir daqui a estrutura é quase igual a da seção anterior-->
+            <h2 class="subtitulo">Formação</h2>
+            <div>
+                <p class="formacao-texto">
+                    Minha mais recente experiência acadêmica é a <strong>graduação</strong> 🎓  que curso no SENAC de <strong>Análise e Desenvolvimento de Sistemas</strong> iniciada em 08/2021. Além disso, desde o início da graduação me mantenho atualizado com formações online de tecnologia e programação. 
+                </p>
+                <ul class="faculdade-lista">
+                    <li class="faculdade">
+                        <span class="faculdade-tipo">Bacharel</span>
+                        <h3 class="faculdade-curso">Engenharia elétrica</h3>
+                        <span class="faculdade-instituicao">UERJ</span>
+                        <br>
+                        <span class="faculdade-instituicao">Conclusão: 2014/2</span>
+                    </li>
+                    <li class="faculdade">
+                        <span class="faculdade-tipo">Tecnólogo</span>
+                        <h3 class="faculdade-curso">Análise e Desenvolvimento de Sistemas</h3>
+                        <span class="faculdade-instituicao">SENAC</span>
+                        <br>
+                        <span class="faculdade-instituicao">Início: 2021/2</span>
+                    </li>
+                </ul>
+                <div class="formacao-extra">
+                    <div class="cursos">
+                        <h3>Cursos Intensivos</h3>
+                        <ul>
+                            <li>Formação em Javascript para Back End <span>56h</span></li>
+                            <li>Formação Node.Js <span>72h</span></li>
+                        </ul>
+                    </div>
+                    <div class="idiomas">
+                        <h3>Idiomas</h3>
+                        <ul>
+                            <li>Inglês <span>/Intermediário</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+       última seção - contato
+    -->
+    <footer class="footer" id="contato">
+        <div class="footer-container">
+            <p class="footer-texto">Estou sempre disponível para novos projetos. Entre em contato comigo e podemos construir algo juntos 🤝
+            </p>
+            <ul class="footer-contato">
+                <li>dbastos.dev@gmail.com</li>
+                <li><a href="https://github.com/dbastosdev">github</a></li>
+                <li><a href="https://medium.com/@dbastos.dev">medium</a></li>
+                <li><a href="https://www.linkedin.com/in/douglas-b-5a7413219/">Linkedin</a></li>
+            </ul>
+            <p class="footer-copy"> Feito com muito ☕ por dbastos.dev - Licença MIT </p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,103 @@
+/* Estilizaçõs básicas utilizadas em todo o site*/
+.introducao{
+    /* máxima largura do conteúdo na página*/
+    max-width: 1200px;
+    /* Padding para cima e baixo / laterais para desgrudar o conteúdo*/
+    padding: 40px 20px;
+     /* Centralização de todo o bloco de introdução na tela*/
+    margin: 0 auto;
+    /*Alinhamento entre os itens dentro do bloco da classe introdução quando usamos grid, precisamos ditribuir o conteúdo em colunas. Olhando o layout do figma temos a distribuição 4 para imagem e 8 para o texto*/
+    display: grid;
+    /* Proporção 4 e 8 = 1fr e 2fr*/
+    grid-template-columns: 1fr 2fr;
+    /*Espaço entre os blocos dentro de introdução*/
+    gap: 100px;
+    /*Alinhando os blocos internos dentro da classe introdução*/
+    align-items: center;
+}
+
+/* Acessando exclusivamente o h1 dentro da classe introdução*/
+.introducao h1{
+    font-size: 4.5rem;
+    line-height: 1.125;
+    margin-bottom: 30px;
+
+    /*Definição como position relative devido ao elemento decorativo que está como absolute*/
+    position: relative;
+}
+
+/* Adicionando o detalhe decorativo colorido. Não utiliza html para isso*/
+/* Usa a classe introdução para acessar o elemento h1 e inserir o detalhe*/
+.introducao h1::before {
+    /* content: '🧑🏾‍💻'; */
+    /* usando o conteúdo nulo, pois é obrigatório haver conteúdo*/
+    content: '';
+    display: block; /**/
+    /*Dimensões igual ao do layout figma*/
+    width: 130px;
+    height: 100px;
+    /* Caminho da imagem*/
+    background: url('../img/detalhe.svg') no-repeat center;
+    /* Controla o posicionamento do elemento a partir do elemento pai, nesse caso h1. Para isso, temos que definir o h1 como position relative*/
+    position: absolute;
+    left: -45px;
+    top: -20px;
+    /* Joga para trás do texto*/
+    z-index: -1;    
+}
+
+.introducao p{
+    font-size: 1.5rem;
+    color: #525252;
+}
+
+/* Reponsividade: A partir do momento que imagem começa a quebra, some com ela da tela*/
+
+/* Primeiro ponto de quebra para lidar com distorção da imagem*/
+
+@media(max-width: 1000px){
+    /* Reduz o tamanho da tipografia*/
+    .introducao h1{
+        font-size: 3rem;
+    }
+}
+
+/* Segundo ponto de quebra*/
+@media(max-width: 800px){
+    .introducao{
+        /* Passa a fazer tanto imagem quanto h1 ocupar a mesma quantidade de colunas*/
+        grid-template-columns: 1fr 1fr;
+        /* Reduz o gap*/
+        gap: 40px;
+    }
+
+    /* Reduzindo a tipografia*/
+    .introducao h1{
+        font-size: 2rem;
+    }
+
+    /*Reduzindo o tamanho do detalhe*/
+    .introducao h1::before{
+        /* display: none; */
+        width: 40px;
+        height: 10px;
+        left: -10px;
+        top: 14px;
+        
+    }
+}
+
+/* Terceira quebra abaixo de 400*/
+@media(max-width: 500px){
+ 
+    /* Sumindo com a imagem*/
+    .introducao img{
+        display: none;
+    }
+
+    /* Como apenas uma coluna terá conteúdo, basta mudar para 1fr*/
+    .introducao{
+        grid-template-columns: 1fr;
+    }
+   
+}

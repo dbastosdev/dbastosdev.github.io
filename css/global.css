@@ -1,0 +1,55 @@
+/*
+Arquivo de estilo global
+*/
+
+/*
+Limpando os estilos padrões do navegador
+Chamado de reset. Isso pode ser adotado em qualquer projeto web
+*/
+
+body{
+    font-family: "Fira Sans", Arial, sans-serif;
+    margin: 0px;
+    /*Cor do texto da tipografia*/
+    color: #141414;
+    /* margin-bottom: 1000px; */
+}
+
+h1, h2, h3, p {
+    /*Unidade deve estar colada no número, do contrário, não dá o reset*/
+    margin: 0px;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+    /* Remove a decoração das listas */
+    list-style: none;
+}
+
+img{
+    /* Faz imagem ocupar apenas 100% da largura do elemento em que ela for inserida*/
+    max-width: 100%;
+    /* Faz ela ocupar uma linha inteira*/
+    display: block;
+}
+
+/* Estilo global para o subtitulo que será reaproveitado em todo o site*/
+.subtitulo {
+    font-size: 8rem;
+    /*Habilita a quebra de linha*/
+    word-break: break-all;
+    text-transform: uppercase;
+    /*Depois de definir a quebra, aqui definimos a quantidade de caracteres por linha*/
+    max-width: 4ch;
+}
+
+@media(max-width: 800px){
+   /*Muda a cor do subtitulo*/
+    .subtitulo {
+         font-size: 3rem;
+         text-transform: capitalize;
+         /* Define como importante essa configuração, dessa forma não é sobreescrita*/
+         max-width: initial !important;
+    }
+ }

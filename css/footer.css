@@ -1,0 +1,58 @@
+.footer{
+    background: #000000;
+}
+
+.footer-container{
+    /* Container utilizado em todo o código para limitar conteúdo na página*/
+    max-width: 1200px;
+    /* Distânciamento da seção anterior*/
+    padding: 120px 20px 60px 20px;
+    margin: 0 auto;
+    /* Organização do conteúdo na página em colunas distintas*/
+    display: grid;
+    /* Importante está distribuído como 1 e 2fr para manter o alinhamento de cima*/
+    grid-template-columns: 1fr 1fr;
+    /* Dá um espaçamento entre as colunas*/
+    gap: 100px;
+    align-items: center;
+}
+
+.footer-texto{
+    font-size: 1.5rem;
+    line-height: 1.33rem;
+    color: #cccccc;
+}
+
+.footer-contato li{
+    font-weight: bold;
+    font-size: 2.25rem;
+    line-height: 1.1;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.footer li a{
+    color: #ffffff;
+}
+
+.footer-copy{
+    font-size: 1.125rem;
+    color: #8f8f8f;
+    /*Faz pegar de ponta a ponta*/
+    /* Se não fizesse esse 1/-1 o responsivo não funcionaria*/
+    grid-column: 1/-1;
+    /*Alinha ao centro*/
+    text-align: center;
+}
+
+/*Ajuste do responsivo*/
+@media(max-width: 800px){
+    .footer-container{
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-contato li{
+        font-size: 1.5rem;
+    }
+}

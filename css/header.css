@@ -1,0 +1,104 @@
+/*
+Estilos do header
+*/
+
+/*
+FLEX BOX
+https://www.origamid.com/projetos/flexbox-guia-completo/?fbclid=IwAR3rjFiFnXUug0qxcLAI5ZWDZkZ2onrn1o2MOR52mUGWOfDlzif3PaBhq1M
+
+GRID
+https://www.origamid.com/projetos/css-grid-layout-guia-completo/?fbclid=IwAR1cL3zrtDV3DvKfKhSBs3QNcTwEV2S_xKWxkv478hd3rXB3yXymuYq10A4
+*/
+
+/* Acessando e estilizando uma classe*/
+.header {
+    /* 
+    Tamanho máximo do site - largura
+    Para não deixar o site à esquerda, colocamos uma margem automática. 
+    */
+    max-width: 1200px;
+    /* margin para deixar elementos centralizados. Nos meus projetos, definir como global*/
+    margin: 0 auto;
+    /* background-color: lightgreen; */
+    padding: 40px 20px;
+    /* 
+    Faz com que os itens fiquem um ao lado do outro. Percebe que a classe header vai alinhar lado a lado todos os itens dentro dela que é a img e ul de links.
+    */
+    display: flex;
+    /* Espaçando os elementos img e ul*/
+    justify-content: space-between;
+    /*Alinha todos itens ao centro img e  ul*/
+    align-items: center;
+
+}
+
+.header h1{
+    font-size: 2.5rem;
+}
+
+.header h1::before{
+    content: '<';
+}
+
+.header h1::after{
+    content: '>';
+}
+
+/* Fazemos o mesmo com os elementos internos da lista para posicioná-los corretamente
+   Aqui organizamos os itens da lista li
+*/
+.header-menu {
+    display: flex;
+    /* Permite que o layout quebre no responsitvo*/
+    flex-wrap: wrap;
+    /* É a distância entre os itens*/
+    gap: 10px;
+    /*Sempre centraliza o conteúdo. Desa forma, mesmo em telas menores vai ficar centralizado todos os links*/
+    justify-content: center;
+}
+
+/* 
+Estilizando os links
+Acessa o elemento 'a' do header
+*/
+
+.header a {
+    /* Lembrando que 1 rem é cerca de 16px. Basta fazer as contas*/
+    /* No caso dos links, possuem 18px, logo 1.125 = 18/16*/
+    font-size: 1.125rem;
+    /* background-color: lightgreen; */
+    /* Aumentando o tamnho da linha */
+    line-height: 1.3;
+    /* Aumentando a área de click do elemento, com isso toda área é clicável*/
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #141414;
+    /* Para funcionar corretamente os valores de padding*/
+    display: block;
+}
+
+/* Trabalhando a responsividade */
+
+/* Para telas de tamanho mediano*/
+
+/* Necessário ver através do redimensionamento da página quando o layout vai quebrar. No caso do projeto, o layout começa a quebrar a partir de 800px*/
+@media (max-width: 800px){
+    /* Alterando o header */
+    .header {
+       /* Mudanndo o direcionamento do header para coluna */ 
+       /* Assim os elementos ficam em uma única coluna */
+       flex-direction: column;
+       /* Espaço entre elementos*/
+       gap: 40px;
+       /* redução do padding para diminuir os espços em branco*/
+       padding: 20px;
+    }
+
+    /* Gerando aspecto de botão para os links */
+    .header a {
+        background-color: #f5f5f5;
+        border-radius: 4px;
+    }
+
+}
+

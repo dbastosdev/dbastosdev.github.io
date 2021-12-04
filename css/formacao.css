@@ -1,0 +1,193 @@
+
+/*formacação com background colorido*/
+.formacao{
+    background: #141414;
+    color: #ffffff;
+}
+
+/*A parte de formação é parecida que a da seção anterior*/
+.formacao-container{
+    /* Container utilizado em todo o código para limitar conteúdo na página*/
+    max-width: 1200px;
+    /* Distânciamento da seção anterior*/
+    padding: 120px 20px;
+    margin: 0 auto;
+    /* Organização do conteúdo na página em colunas distintas*/
+    display: grid;
+    /* Importante está distribuído como 1 e 2fr para manter o alinhamento de cima*/
+    grid-template-columns: 1fr 2fr;
+    /* Dá um espaçamento entre as colunas*/
+    gap: 100px;
+    align-items: top;
+    /*Position relative para que o detalhe leve em consideração o container como elemento pai*/
+    position: relative;
+}
+
+/*Detalhe em por cima de todo o container*/
+.formacao-container::after{
+    content: '';
+    display: block;
+    width: 130px;
+    height: 100px;
+    background: url("../img/detalhe.svg") no-repeat center;
+    /*Posicionamento*/
+    position: absolute;
+    bottom: -50px;
+    left: 20px;
+
+}
+
+/*Cor do subtítulo*/
+.formacao .subtitulo {
+    color: #000000;
+    max-width: 5ch;
+}
+
+/*Especificação do texto de formação*/
+.formacao-texto {
+    font-size: 1.5rem;
+    line-height: 1.33;
+    max-width: 48ch;
+    margin-bottom: 60px;
+    color: #a3a3a3;
+}
+
+/*Estilização das palavras chaves do texto*/
+.formacao-texto strong{
+    color: #ffffff;
+}
+
+/*Estiliza o item geral da faculdade*/
+.faculdade-lista {
+    /* Posiciona itens lado a lado*/
+    display: flex;
+    /* Se não houver espaço coloca itens lado a lado.*/
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+/*Falando com cada item específico*/
+.faculdade {
+    background: #000000;
+    padding: 20px;
+    border-radius: 4px;
+    /*Ajustando o conteúdo para que todas caixas tenham mesmo tamanho. Do contrário, cada container de formação teria um tamanho diferente*/
+    flex: 1;
+    display: flex; /* Alinha itens lado a lado*/
+    flex-direction: column; /* Alinha itens em formato de coluna*/
+}
+
+.faculdade-tipo{
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color: #a3a3a3;
+    /* O elemento span não aceita margin por padrão. Só funciona pois estou definindo no item faculdade, item geral, como display: flex e flex-direction: column*/
+    margin-bottom: 10px;
+}
+
+.faculdade-curso{
+    font-size: 1.125rem;
+    line-height: 1.4;
+    margin-bottom: 40px;
+    /*Para que seja possível orientar o detalhe em verde a partir desse elemento, como se ele fosse o elemento pai*/
+    position: relative;
+    flex: 1;
+}
+
+/*Fazendo o pequeno detalhe em verde do layout*/
+.faculdade-curso::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(#b6f829, #67dd0a);
+    /* Acaba que esse elemento entra no fluxo do grid. Para removê-lo, temos que colocá-lo como position absolute e posicionálo onde quisermos*/
+    position: absolute;
+    top: 5px;
+    left: -24px;
+}
+
+.faculdade-instituicao{
+    font-size: 1.125rem;
+    color: #a3a3a3;
+}
+
+.cursos {
+    margin-bottom: 60px;
+}
+
+/* Falando com cada itens de cursos*/
+.formacao-extra h3{
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: #8f8f8f8f;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    position: relative; 
+}
+
+/* Ajustando os ícones de formação*/
+/* Estilo geral para o ícone de cursos e idiomas*/
+.formacao-extra h3::before{
+    display: block;
+    content: '';
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: -36px;
+    top: -4px;
+}
+
+/* Mudança dos ícones para cursos*/
+.cursos h3::before{
+    background: url(../img/cursos.svg) no-repeat center center;
+}
+
+/* Mudança dos ícones para idiomas*/
+.idiomas h3::before{
+    background: url(../img/idiomas.svg) no-repeat center center;
+}
+
+/*Últimos ajustes em relação à formação*/
+.formacao-extra li {
+   font-size: 1.125rem;
+   line-height: 1.1;
+   margin-bottom: 20px;
+
+}
+
+.formacao-extra span{
+    color: #8f8f8f8f;
+}
+
+/* Ajustando itens de cursos conforme o layout. O nome no início e a hora no fianl*/
+.cursos li{
+    display: flex; /* Um item ao lado do outro*/
+    justify-content: space-between;
+}
+
+/*Ajuste do responsivo*/
+@media(max-width: 800px){
+    .formacao-container{
+        grid-template-columns: 1fr;
+        padding: 60px 20px;
+        gap: 40px;
+    }
+    .formacao .subtitulo {
+        color: #ffffff;
+    }
+    
+    .formacao-texto {
+        font-size: 1.25rem;
+    }
+
+    .idiomas h3::before{
+        display: none;
+    }
+
+    .cursos h3::before{
+        display: none;
+    }
+
+}

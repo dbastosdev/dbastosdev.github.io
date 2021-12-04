@@ -1,0 +1,161 @@
+/* Estilizando experiências. Lembrando que é possível criar uma outra classe, chamada container que faria a definição do max-widht, margin e paddin que poderiam ser utilizados em todas seções do código definida em global*/
+.experiencia{
+    /* Container utilizado em todo o código para limitar conteúdo na página*/
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Distânciamento da seção anterior*/
+    padding: 40px 20px;
+    /* Organização do conteúdo na página em colunas distintas*/
+    display: grid;
+    /* Importante está distribuído como 1 e 2fr para manter o alinhamento de cima*/
+    grid-template-columns: 1fr 2fr;
+    /* Dá um espaçamento entre as colunas*/
+    gap: 100px;
+    align-items: top;
+    
+}
+
+/* O subtitulo possui estilo global no site. Contudo a cor utilizada para ele é diferente dependendo da seção. Para selecionar a cor do subtitulo podemos usar um estilo em casacata de classes. Nesse exemplo, será usado um estilo específico para o subtitulo abaixo da classe experiencia*/
+
+.experiencia .subtitulo {
+    color: #e0e0e0;
+}
+
+/* Estiliza a seção com mini texto sobre as experiências*/
+.experiencia-texto{
+    font-size: 1.5rem;
+    line-height: 1.33;
+    /* Sem faz uma formação adicional na ocupação do texto*/
+    max-width: 50ch;
+    color: #525252;
+    margin-bottom: 60px;
+}
+
+/* Estiliza a tag strong dentro de experiencia-texto em cascata*/
+.experiencia-texto strong{
+    color:#141414
+}
+
+/*Empresa*/
+/* Faremos uma nova divisão em colunas do conteúdo para atendimento do layout*/
+.empresa{
+    display: grid;
+    /*Duas colunas com mesmo tamanho. Isso faz com que cada elemento ocupe uma linha divididos em duas colunas*/
+    grid-template-columns: 1fr 1fr;
+    /* Define o gap na horizontal e vertical*/
+    gap: 10px 20px;
+    /* Gera uma área maior ao redor do elemento e distancia dos outros*/
+    padding: 20px;
+    background: #f5f5f5;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    /*Definindo como position relative para que .empresa-ano seja posicionado tendo .empresa como elemento pai*/
+    position: relative;
+}
+
+/*Fazendo o pequeno detalhe em verde do layout*/
+.empresa::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(#b6f829, #67dd0a);
+    /* Acaba que esse elemento entra no fluxo do grid. Para removê-lo, temos que colocá-lo como position absolute e posicionálo onde quisermos*/
+    position: absolute;
+    top: 20px;
+    left: -4px;
+}
+
+/* Adequando o posicionamento do detalhe do ano*/
+.empresa-ano{
+    position: absolute;
+    /*Posicionamento*/
+    left: -100px;
+    top: 22px;
+    color: #525252;
+    font-size: 0.875rem;
+
+    /* Macete, ao atribuir position absolute o conteúdo fica sempre do tamanho do texto. Dessa forma, não functionária apenas o text-align: right. Pare resolver isso, basta aumenta o tamanho do container que tem o texto.*/
+    /* background-color: blue; */
+    width: 60px;
+    text-align: right;
+
+}
+
+/*Estilização do título da emrpesa*/
+.empresa-titulo {
+    font-size: 1.125rem;
+    line-height: 1.1;
+    font-weight: bold;
+}
+
+.empresa-titulo a{
+    color:#141414;
+}
+
+/*Estilizando a descrição da emrpesa*/
+.empresa-texto{
+    font-size: 00.875rem;
+    line-height: 1.4; /*Melhorou e muito a legibilidade*/
+    color: #525252;
+}
+
+/* Organizando a núvem de tags das habilidades. Esses são estilos gerais definidos para organização de cada li*/
+.empresa-habilidades {
+    /* Um item ao lado do outro*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-content: start;
+}
+
+/* Estilo específico para cada item li*/
+.empresa-habilidades li {
+    font-size: .875rem;
+    line-height: 1.4;
+    border-radius: 4px;
+    background-color: #ffffff;
+    padding: 5px 10px;
+}
+
+/* Tornando resposivo*/
+
+@media(max-width: 800px){
+    /* Altera toda estrutura da seção experiência para que caiba em uma coluna*/
+   .experiencia {
+       /* Transforma tudo em apenas uma coluna */
+       grid-template-columns: 1fr;
+       gap: 40px;
+   } 
+
+   /*Muda a cor do subtitulo*/
+   .experiencia .subtitulo {
+        color: #141414
+   }
+   /*Reduz a fonte do texto inicial*/
+   .experiencia-texto{
+       font-size: 1.25rem;
+   }
+
+   /* O ano das experiências sumiu da tela, logo temos que reposicioná-lo*/
+   .empresa-ano{
+       /*Volta ao fluxo inicial e quebra o layout*/
+       position: initial;
+       /* Mudando a ordem - último elemento*/
+       order: 1;
+       /*Coloca a posicição inicial horizontal*/
+       width: initial;
+       text-align: left;
+   }
+   /* Inclui um texto antes do ano*/
+   .empresa-ano::before{
+       content:'Ano: '
+   }
+}
+
+/* Em caso de uma redução ainda maior da tela*/
+@media(max-width: 800px){
+    .empresa{
+        grid-template-columns: 1fr;
+    }
+}
