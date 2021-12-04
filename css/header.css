@@ -100,6 +100,9 @@ Acessa o elemento 'a' do header
         border-radius: 4px;
     }
 
+}
+
+@media (max-width: 350px){
     .header h1::before{
         content: '';
     }
@@ -109,5 +112,4 @@ Acessa o elemento 'a' do header
     }
 
 }
-
 
