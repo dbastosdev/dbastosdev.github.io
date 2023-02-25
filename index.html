@@ -1,61 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <!-- Código para encode da página, faz não criar caracteres estranhos no html-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dbastos.dev Engenheiro & Desenvolvedor Web 👨🏾‍💻</title>
-    <!-- SEO meta tag description-->
     <meta name="description" content="Engenheiro &Desenvolvedor Web.">
-    <!-- Arquivo de link com o css do site-->
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <!--
-        O site segue uma estrutura linear de cima para baixo. Logo, olhando como diversas caixas, podemos estruturar a aplicação de cima para baixo. Usando tags semânticas. 
-    -->
-    <!--
-        Primeira seção Logo e links internos da página
-    -->
     <header class="header">
-        <!-- Logo-->
-        <!--<img src="./img/marca.svg" alt="Lobo"> -->
         <h1> dbastos.dev </h1>
-        <!--Links do menu-->
         <nav>
             <ul class="header-menu">
-                <!-- links internos da página-->
-                <!-- Os links utilizam o id para identificar as seções internas do site-->
                 <li><a href="#experiencia">Experiência</a></li>
                 <li><a href="#formacao">Formação</a></li>
                 <li><a href="#contato">Contato</a></li>
-                <li><a href="https://medium.com/@dbastos.dev">Blog</a></li>
-                
+                <li><a href="https://medium.com/@dbastos.dev">Blog</a></li>  
             </ul>
         </nav>
     </header>
 
-    <!--
-        Segunda seção Introdução do site
-    -->
-
     <main class="introducao">
-        <img src="./img/perfil.svg" alt="Lobo cinza">
+        <img src="./img/perfil.jpg" alt="Meu perfil">
         <div>
-            <!-- Uso do BR para quebrar o texto -->
-            <h1>Engenheiro & <br> Desenvolvedor Web</h1>
+            <h1>Analista & Desenvolvedor de Sistemas</h1>
             <p>Localizado no Rio de Janeiro 🏖️ </p>
         </div>
     </main>
 
-     <!--
-        Terceira seção Experiência 
-    -->
-    <!-- aria-label é para definir uma seção de conteúdo-->
     <section class="experiencia" id="experiencia" aria-label="Experiência">
         <h2 class="subtitulo">Experiência</h2>
         <div>
-            <p class="experiencia-texto">Atualmente desenvolvo pequenas aplicações utilizando apenas <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong> no <strong>Front-End</strong> e com <strong>Node.Js</strong> e <strong>PHP</strong> no <strong>Back-End</strong>. Abaixo relaciono a lista dos meus mais recentes projetos até o momento.</p>
+            <p class="experiencia-texto">Atualmente desenvolvo pequenas aplicações utilizando apenas <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong> no <strong>Front-End</strong> e com <strong>Java</strong> e <strong>PHP</strong> no <strong>Back-End</strong>. Abaixo relaciono a lista dos meus mais recentes projetos até o momento.</p>
 
             <div class="empresa">
                 <span class="empresa-ano">Dez-2021</span>
@@ -100,13 +76,9 @@
             </div>
         </div>
     </section>
-    <!--
-       Quarta seção Formação
-    -->
+   
     <section class="formacao" id="formacao">
-        <!-- No layout, essa área é toda preta. Com isso, o container de 1200px deve ficar em uma div dentro da section, sendo a section responsável por colorir o fundo.-->
         <div class="formacao-container">
-            <!-- A partir daqui a estrutura é quase igual a da seção anterior-->
             <h2 class="subtitulo">Formação</h2>
             <div>
                 <p class="formacao-texto">
@@ -146,9 +118,6 @@
             </div>
         </div>
     </section>
-    <!--
-       última seção - contato
-    -->
     <footer class="footer" id="contato">
         <div class="footer-container">
             <p class="footer-texto">Estou sempre disponível para novos projetos. Entre em contato comigo e podemos construir algo juntos 🤝
@@ -157,7 +126,7 @@
                 <li>dbastos.dev@gmail.com</li>
                 <li><a href="https://github.com/dbastosdev" target="_blank">github</a></li>
                 <li><a href="https://medium.com/@dbastos.dev" target="_blank">medium</a></li>
-                <li><a href="https://www.linkedin.com/in/douglas-b-5a7413219/" target="_blank">linkedin</a></li>
+                <li><a href="https://www.linkedin.com/in/dbastosdev/" target="_blank">linkedin</a></li>
             </ul>
             <p class="footer-copy"> Feito com muito ☕ por dbastos.dev </p>
         </div>

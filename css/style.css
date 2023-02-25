@@ -1,14 +1,3 @@
-/*
-A fim de organizar o código em partes menores, vamos separar cada um dos estilos css em arquivos separados. Com isso, ficamos pontos de mudanças específicos. 
-
-O style.css é nosso arquivo principal de design css é ele que está linkado diretamente com o html. Todos os outros estilos são chamados aqui dentro. 
-*/
-
-
-/*
-Importando estilos:
-*/
-
 @import './global.css';
 @import './header.css';
 @import './introducao.css';
