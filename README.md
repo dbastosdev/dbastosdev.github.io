@@ -1,2 +1,2 @@
 # site-pessoal
-Página pessoal com base no layout desenvolvido por origamid e implementado por mim com algumas modificações. 
+Projeto utilizado como PTI do curso de Análise e Desenvolvimento de Sistemas. 
